@@ -40,7 +40,7 @@ If you receive a capacity error when launching an instance in a placement group 
 
 ## Partition Placement Groups<a name="placement-groups-partition"></a>
 
-Partition placement groups help reduce the likelihood of correlated hardware failures for your application\. When using partition placement groups, Amazon EC2 divides each group into logical segments called partitions\. Amazon EC2 ensures that each partition within a placement group has its own set of racks\. Each rack has its own network and power source\. No two partitions within a placement group share the same racks, allowing you to isolate the impact of hardware failure within your application\.
+Partition placement groups help reduce the likelihood of correlated hardware failures for your application\. When using partition placement groups, Amazon EC2 divides each group into logical segments called partitions\. Amazon EC2 ensures that each partition within a placement group has its own set of racks\. Racks within a partition share an independant network and power from other partitions\. No two partitions within a placement group share the same racks, allowing you to isolate the impact of hardware failure within your application\.
 
 The following image is a simple visual representation of a partition placement group in a single Availability Zone\. It shows instances that are placed into a partition placement group with three partitions—**Partition 1**, **Partition 2**, and **Partition 3**\. Each partition comprises multiple instances\. The instances in a partition do not share racks with the instances in the other partitions, allowing you to contain the impact of a single hardware failure to only the associated partition\.
 
